@@ -62,9 +62,7 @@ public class TodoService {
     public TodoDeletedResponse delete(int id) {
         if (todoRepository.existsById(id)) {
             todoRepository.deleteById(id);
-            TodoDeletedResponse todoDeletedResponse = new TodoDeletedResponse();
-            todoDeletedResponse.setMessage("Todo by id " + id + " was deleted.");
-            return todoDeletedResponse;
+            return new TodoDeletedResponse(id);
         }
 
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Todo not found for id " + id);
