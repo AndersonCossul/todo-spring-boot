@@ -1,0 +1,5 @@
+CREATE TABLE `todos` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `description` MEDIUMTEXT NULL,
+  PRIMARY KEY (`id`));
